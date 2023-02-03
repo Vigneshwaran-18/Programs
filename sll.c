@@ -88,11 +88,13 @@ pop()
 		printf("\bNo data/Stack Underflow\n");
 	else{
 	temp = head;
-	if(temp->next!=NULL)
+	if(temp!=NULL)
 	{
 		printf("Popped element: %d\n", temp->data);
 		if(head->next!=NULL)
 			head = head->next;
+		else if(head->next==NULL)
+			free(head);
 		free(temp);
 	}}
 
